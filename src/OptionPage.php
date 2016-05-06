@@ -22,9 +22,6 @@ class OptionPage {
     $this->setPosition( $args, $settings );
     $this->setIconUrl( $args, $settings );
 
-    //var_dump( $args );
-    //die();
-
     acf_add_options_page( $args );
 
   }

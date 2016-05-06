@@ -3,21 +3,7 @@
 /*
 Plugin Name: ACF Option Pages
 Description: Creates options pages using ACF interface and ACF functions
-Version: 0.9.1
-
-TO DO:
-
-Make ACF field group
-  Page or subpage (parent_slug)
-    page_title
-    menu_title
-    menu_slug
-    capability
-    redirect
-Write addOptionsPagePostType to add CT
-Parse all the options pages
-Call either acf_add_options_page() or acf_add_options_sub_page()
-
+Version: 0.9.2
 */
 
 new ACF_Option_Pages;
@@ -41,6 +27,10 @@ class ACF_Option_Pages {
     $args = array(
       'key' => 'acf_option_page',
       'name' => 'Option Page',
+      'settings' => array(
+        'lbl_name' => 'Option Pages',
+        'lbl_add_new' => 'Add Option Page',
+      )
     );
     $pt->add( $args );
   }
