@@ -51,6 +51,10 @@ class ACF_Option_Pages {
   public function addRegisteredOptionsPages() {
     $ops = $this->getOptionPages();
     foreach( $ops as $opPost ) {
+
+      //var_dump( $opPost );
+      //die();
+
       $this->registerOptionPage( $opPost );
     }
   }
@@ -68,7 +72,12 @@ class ACF_Option_Pages {
   }
 
   public function getOptionPages() {
-    return get_posts( array( 'post_type' => 'acf_option_page' ));
+    return get_posts( array(
+      'post_type'     => 'acf_option_page',
+      'meta_key'	    => 'is_subpage',
+      'orderby'			  => 'meta_value_num',
+	    'order'				  => 'DESC'
+    ));
   }
 
   public function unregisterPostType( $post_type ) {
