@@ -25,50 +25,50 @@ new ACF_Option_Pages;
 class ACF_Option_Pages {
 
   public function __construct() {
+    require('src/PostType.php');
+    require('src/OptionPage.php');
     add_action('init', array( $this, 'includeAcfFields' ));
-    add_action('init', array( $this, 'addAcfPostType' ));
-    add_action('init', array( $this, 'addRegisteredPostTypes' ));
+    add_action('init', array( $this, 'addOptionsPagePostType' ));
+    add_action('init', array( $this, 'addRegisteredOptionsPages' ));
   }
 
   public function includeAcfFields() {
 
     require('assets/acf/fields.php');
-
-    acf_add_options_page();
+    require('assets/acf/fields.php');
 
   }
 
   public function addOptionsPagePostType() {
-    $op = new OptionsPage;
+    $pt = new ACFOP_PostType;
     $args = array(
-      'key' => 'acf_post_type',
-      'name' => 'Post Type',
+      'key' => 'acf_option_page',
+      'name' => 'Option Page',
     );
-    $op->addPostType( $args );
+    $pt->add( $args );
   }
 
-  public function addRegisteredPostTypes() {
-    $cts = $this->getPostTypes();
-    foreach( $cts as $ctPost ) {
-      $this->registerPostType( $ctPost );
+  public function addRegisteredOptionsPages() {
+    $ops = $this->getOptionPages();
+    foreach( $ops as $opPost ) {
+      $this->registerOptionPage( $opPost );
     }
   }
 
-  public function registerPostType( $ctPost ) {
-    $ct = new PostType;
-    $fields = get_fields( $ctPost->ID );
+  public function registerOptionPage( $opPost ) {
+    $op = new OptionPage;
+    $fields = get_fields( $opPost->ID );
 
     $args = array(
-      'key' => $fields['key'],
-      'name' => $ctPost->post_title,
+      'page_title' => $ctPost->post_title,
       'settings' => $fields,
     );
 
-    $ct->addPostType( $args );
+    $op->add( $args );
   }
 
-  public function getPostTypes() {
-    return get_posts( array( 'post_type' => 'acf_post_type' ));
+  public function getOptionPages() {
+    return get_posts( array( 'post_type' => 'acf_option_page' ));
   }
 
   public function unregisterPostType( $post_type ) {
