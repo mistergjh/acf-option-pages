@@ -1,4 +1,4 @@
-=== ACF Post Types ===
+=== ACF Option Pages ===
 Contributors: goldhat
 Donate link: http://goldhat.ca
 Tags: acf, option pages, options
