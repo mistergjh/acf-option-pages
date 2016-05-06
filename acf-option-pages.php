@@ -33,10 +33,7 @@ class ACF_Option_Pages {
   }
 
   public function includeAcfFields() {
-
     require('assets/acf/fields.php');
-    require('assets/acf/fields.php');
-
   }
 
   public function addOptionsPagePostType() {
@@ -51,10 +48,6 @@ class ACF_Option_Pages {
   public function addRegisteredOptionsPages() {
     $ops = $this->getOptionPages();
     foreach( $ops as $opPost ) {
-
-      //var_dump( $opPost );
-      //die();
-
       $this->registerOptionPage( $opPost );
     }
   }
