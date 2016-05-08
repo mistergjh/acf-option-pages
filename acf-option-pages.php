@@ -43,7 +43,7 @@ class ACF_Option_Pages {
   }
 
   public function registerOptionPage( $opPost ) {
-    $op = new OptionPage;
+    $op = new ACFOP_OptionPage;
     $fields = get_fields( $opPost->ID );
 
     $args = array(

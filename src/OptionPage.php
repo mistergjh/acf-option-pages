@@ -1,6 +1,6 @@
 <?php
 
-class OptionPage {
+class ACFOP_OptionPage {
 
   public function add( $args ) {
 
