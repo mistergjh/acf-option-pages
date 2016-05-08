@@ -3,7 +3,7 @@
 /*
 Plugin Name: ACF Option Pages
 Description: Creates options pages using ACF interface and ACF functions
-Version: 0.9.2
+Version: 0.9.3
 */
 
 new ACF_Option_Pages;
