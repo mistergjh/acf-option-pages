@@ -1,6 +1,6 @@
 === ACF Option Pages ===
 Contributors: goldhat
-Donate link: http://goldhat.ca
+Donate link: http://goldhat.ca/donate/
 Tags: acf, option pages, options
 Requires at least: 3.0.1
 Tested up to: 4.5

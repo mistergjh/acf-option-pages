@@ -1,10 +1,15 @@
 <?php
 
 /*
-Plugin Name: ACF Option Pages
-Description: Creates options pages using ACF interface and ACF functions
-Version: 0.9.3
-*/
+  Plugin Name: ACF Option Pages
+  Plugin URI: http://goldhat.ca/plugins/acf-option-pages/
+  Description: Creates options pages using ACF interface and ACF functions
+  Version: 1.0.0
+  Author: Joel Milne, GoldHat Group
+  Author URI: http://goldhat.ca
+  Text Domain: acf-option-pages
+  License: GPLv2 or later
+ */
 
 new ACF_Option_Pages;
 
@@ -28,8 +33,9 @@ class ACF_Option_Pages {
       'key' => 'acf_option_page',
       'name' => 'Option Page',
       'settings' => array(
-        'lbl_name' => 'Option Pages',
-        'lbl_add_new' => 'Add Option Page',
+        'lbl_name'          => 'Option Pages',
+        'lbl_add_new'       => 'Add Option Page',
+        'lbl_add_new_item'  => 'Add Option Page',
       )
     );
     $pt->add( $args );
@@ -42,12 +48,12 @@ class ACF_Option_Pages {
     }
   }
 
-  public function registerOptionPage( $opPost ) {
+  public function registerOptionPage( $post ) {
     $op = new ACFOP_OptionPage;
-    $fields = get_fields( $opPost->ID );
+    $fields = get_fields( $post->ID );
 
     $args = array(
-      'page_title' => $ctPost->post_title,
+      'page_title' => $post->post_title,
       'settings' => $fields,
     );
 
@@ -59,18 +65,9 @@ class ACF_Option_Pages {
       'post_type'     => 'acf_option_page',
       'meta_key'	    => 'is_subpage',
       'orderby'			  => 'meta_value_num',
-	    'order'				  => 'DESC'
+	    'order'				  => 'DESC',
+      'numberposts'   => -1,
     ));
   }
-
-  public function unregisterPostType( $post_type ) {
-    global $wp_post_types;
-    if ( isset( $wp_post_types[ $post_type ] ) ) {
-      unset( $wp_post_types[ $post_type ] );
-      return true;
-    }
-    return false;
-  }
-
 
 }
