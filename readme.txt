@@ -35,7 +35,10 @@ In the search field type “ACF Option Pages” and click Search Plugins. Once y
 
 == Screenshots ==
 
-1.
+1. Option Pages menu tab
+2. Adding a new Options Page
+3. Option to make an options subpage
+4. Advanced settings, set menu position and icon
 
 == Frequently Asked Questions ==
 
