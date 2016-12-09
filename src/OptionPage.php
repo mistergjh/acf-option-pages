@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Version: 1.1.0
+ * Version: 1.2.0
  */
 
 class ACFOP_OptionPage {
@@ -41,31 +41,46 @@ class ACFOP_OptionPage {
   }
 
   public function setParentSlug( &$args, $settings ) {
-    if( array_key_exists( 'parent_slug', $settings )) {
+    if( !array_key_exists( 'parent_slug', $settings ) {
+      return;
+    }
+    if( !empty( $settings['parent_slug'] )) {
       $args['parent_slug'] = $settings['parent_slug'];
     }
   }
 
   public function setPostID( &$args, $settings ) {
-    if( array_key_exists( 'post_id', $settings )) {
+    if( !array_key_exists( 'post_id', $settings ) {
+      return;
+    }
+    if( !empty( $settings['post_id'] )) {
       $args['post_id'] = $settings['post_id'];
     }
   }
 
   public function setAutoload( &$args, $settings ) {
-    if( array_key_exists( 'autoload', $settings )) {
+    if( !array_key_exists( 'autoload', $settings ) {
+      return;
+    }
+    if( !empty( $settings['autoload'] )) {
       $args['autoload'] = $settings['autoload'];
     }
   }
 
   public function setPosition( &$args, $settings ) {
-    if( array_key_exists( 'position', $settings )) {
+    if( !array_key_exists( 'position', $settings ) {
+      return;
+    }
+    if( !empty( $settings['position'] )) {
       $args['position'] = $settings['position'];
     }
   }
 
   public function setIconUrl( &$args, $settings ) {
-    if( array_key_exists( 'icon_url', $settings )) {
+    if( !array_key_exists( 'icon_url', $settings ) {
+      return;
+    }
+    if( !empty( $settings['icon_url'] )) {
       $args['icon_url'] = $settings['icon_url'];
     }
   }

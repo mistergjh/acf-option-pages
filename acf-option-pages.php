@@ -4,7 +4,7 @@
   Plugin Name: ACF Option Pages
   Plugin URI: http://goldhat.ca/plugins/acf-option-pages/
   Description: Creates options pages using ACF interface and ACF functions
-  Version: 1.0.0
+  Version: 1.1.0
   Author: Joel Milne, GoldHat Group
   Author URI: http://goldhat.ca
   Text Domain: acf-option-pages
